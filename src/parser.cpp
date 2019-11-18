@@ -188,12 +188,12 @@ options_metadata parser::load_settings()
     /* [bitcoin] */
     (
         "bitcoin.retargeting_factor",
-        PROPERTY(uint32_t, configured.bitcoin.retargeting_factor),
+        value<uint32_t>(&configured.bitcoin.retargeting_factor),
         "The difficulty retargeting factor, defaults to 4."
     )
     (
         "bitcoin.block_spacing_seconds",
-        PROPERTY(uint32_t, configured.bitcoin.block_spacing_seconds),
+        value<uint32_t>(&configured.bitcoin.block_spacing_seconds),
         "The target block period in seconds, defaults to 600."
     )
     (
@@ -203,7 +203,7 @@ options_metadata parser::load_settings()
     )
     (
         "bitcoin.retargeting_interval_seconds",
-        PROPERTY(uint32_t, configured.bitcoin.retargeting_interval_seconds),
+        value<uint32_t>(&configured.bitcoin.retargeting_interval_seconds),
         "The difficulty retargeting period in seconds, defaults to 1209600."
     )
     (
@@ -212,13 +212,13 @@ options_metadata parser::load_settings()
         "The proof of work limit, defaults to 486604799."
     )
     (
-        "bitcoin.initial_block_subsidy_bitcoin",
-        PROPERTY(uint64_t, configured.bitcoin.initial_block_subsidy_bitcoin),
+        "bitcoin.initial_subsidy_bitcoin",
+        value<uint64_t>(&configured.bitcoin.initial_subsidy_bitcoin),
         "The initial block subsidy in bitcoin, defaults to 50."
     )
     (
-        "bitcoin.subsidy_interval",
-        PROPERTY(uint64_t, configured.bitcoin.subsidy_interval),
+        "bitcoin.subsidy_interval_blocks",
+        value<uint64_t>(&configured.bitcoin.subsidy_interval_blocks),
         "The subsidy halving period in number of blocks, defaults to 210000."
     )
     (
